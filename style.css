@@ -3,7 +3,10 @@
 html {
     scroll-behavior: smooth;
 }
-
+#container{
+    display: inline-block;
+    cursor: pointer;
+}
 
 video{
     background-position: center;
@@ -11,15 +14,17 @@ video{
     flex: 0 1 60vw;
     margin: 0;
 }
-.btn {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
+.transparent-button{
+    background-color: transparent; /* Green */
+    border: 2px solid #333;
+    color: #333;
+    padding: 10px 20px;
     text-align: center;
-    text-decoration: none;
+    transition: opacity 0.3s;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
+    position: relative;
   }
 
 h1 {
@@ -47,18 +52,49 @@ main {
     box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1), -30px 0px 40px rgba(0, 0, 0, 0.1)
 }
 
+/* styles.css */
+.map-container {
+    width: 100%;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100vh;
+}
+
+/* styles.css */
+.video-container {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
 #landing {
-    background: #fff;
+    background: #030303;
 }
 
 #landing-text {
     display: flex;
-    height: 50vh;
+    height: 80vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
     padding-right: 1rem;
     padding-left: 1rem;
+}
+#landing-text h1{
+    margin: o;
+    padding: 20px;
 }
 
 #landing-text h2 {
@@ -71,23 +107,34 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
-    flex: 0 1 60vw;
+    flex: 0 1 100vw;
     margin: 0;
 }
-
-.btn {
-    padding: 0.5rem 2rem;
-    border: 1px solid #ccc;
-    display: inline-block;
-    margin: 2rem 0 0;
-    border-radius: 50px;
-    text-decoration: none;
-    color: #333;
-    transition: background 500ms ease;
+#landing-text-inner h1{
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
 }
+#landing-text-inner h1:hover{
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
 
-.btn:hover {
-    background: #f4f4f4;
+}
+#landing-text-inner a{
+    text-decoration: none;
+    display: inline-block;
+    color: #0a0a0a;
+    font-size: 24px;
+    border: 2px solid #080808;
+    padding: 14px  70px;
+    border-radius: 50px;
+    margin-top: 20px;
+
+}
+.transparent-button:hover {
+    background-color: #888;
+    opacity: 0.7;
 }
 
 #header {
@@ -106,8 +153,10 @@ main {
 }
 
 .caption {
-    padding: 0.8rem;
+    padding: 1px;
     text-align: center;
+    background: #575454;
+    color: #fff;
 }
 
 footer {
@@ -153,8 +202,79 @@ img:hover {
 /*Screen Sizes 700px +*/
 
 @media(min-width: 43.75rem) {
-    .btn {
+    .transparent-button {
         padding: 1rem 3rem;
     }
 }
 
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .active {
+    background-color: #c2020c;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 17px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
